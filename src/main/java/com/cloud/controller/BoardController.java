@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -56,4 +58,30 @@ public class BoardController {
 		service.insertBoard(vo);
 		return "redirect:boardList";
 	}*/
+	
+	
+	@GetMapping("/boardView")
+	//상세보기 페이지 요청
+	public String getBoard(int bno, Model model) {
+		BoardVO board = service.getBoard(bno);
+		service.updateCount(bno);
+		model.addAttribute("board", board);		//jsp로 board 데이터 보냄
+		return "boardView";
+	}
+	
+	//글삭제
+	@GetMapping("/deleteBoard")
+	public String deleteBoard(BoardVO vo) {		//글 삭제 요청
+		service.deleteBoard(vo);
+		return "redirect:boardList";
+	}
+	
+	@PostMapping("/updateBoard")
+	public String updateBoard(BoardVO vo) {		//글 수정
+		service.updateBoard(vo);
+		return "redirect:boardList";
+	} 
+	
+	
+	
 }

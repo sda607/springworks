@@ -15,6 +15,8 @@
 		<section id="list">
 			<h2>글 목록</h2>
 			<h3>Log-out</h3>
+				<c:out value="${sessionId}" />님 환영합니다..
+				<a href=".logout">Log-out</a>
 			<table class="tbl_list">
 				<tr>
 					<th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>조회수</th>
@@ -22,7 +24,7 @@
 				<c:forEach items="${boardList}" var="board">
 					<tr>
 						<td><c:out value="${board.bno}" /></td>
-						<td><c:out value="${board.title}" /></td>
+						<td><a href="/boardView?bno=<c:out value="${board.bno}" />"><c:out value="${board.title}" /></a></td>
 						<td><c:out value="${board.writer}" /></td>
 						<td><fmt:formatDate value="${board.regDate}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
 						<td><c:out value="${board.cnt}" /></td>

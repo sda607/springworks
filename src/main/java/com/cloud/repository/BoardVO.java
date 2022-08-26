@@ -2,6 +2,8 @@ package com.cloud.repository;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +14,7 @@ public class BoardVO {
 	private String title;
 	private String writer;
 	private String content;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date regDate;
 	private int cnt;
 	
