@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+hr{margin: 20px;}
+#container{width: 1000px; margin: 30px auto; text-align: center;}
+a{text-decoration: none;}
+
+.tbl_list{margin: 20px auto; width: 620px; text-align: center;}
+.tbl_list, th ,td{border:1px solid #ccc; border-collapse: collapse; padding: 10px;}
+.btn_box{width: 620px; margin: 0 auto; text-align: left}
+
+
+.tbl_reg{margin: 20px auto; width: 580px;}
+.tbl_reg, th ,td{border:1px solid #ccc; border-collapse: collapse; padding: 10px;}
+.tbl_reg input{width: 450px; height: 30px;}	
+.tbl_reg textarea {width: 460px;}
+.tbl_reg td:nth-child(1) {width: 100px}
+.tbl_reg input[type="submit"], input[type="button"]{width: 60px; height: 30px;}
+
+.tbl_view{margin: 20px auto; width: 580px;}
+.tbl_view, td{border:1px solid #ccc; border-collapse: collapse; padding: 10px;}
+.tbl_view input{width: 450px; height: 30px;}	
+.tbl_view textarea {width: 460px;}
+.tbl_view td:nth-child(1) {width: 100px}
+.tbl_view input[type="submit"], input[type="button"]{width: 60px; height: 30px;}
+.tbl_view .time{text-align: left;}
+
+.tbl_login{margin: 20px auto; width: 580px;}
+.tbl_login, td{border:1px solid #ccc; border-collapse: collapse; padding: 10px;}
+#login .error{color: #f00;}
+
