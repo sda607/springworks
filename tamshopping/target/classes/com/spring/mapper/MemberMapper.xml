@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.MemberMapper">
+	
+	<!-- 회원 목록 -->
+	<select id="getMemberList" resultType="com.spring.domain.MemberVO">
+		SELECT * FROM tam_member
+	</select>
+	
+	<insert id="insertMember">
+		INSERT INTO tam_member (userid, username, userpw, email, gender) values 
+		(#{userid}, #{username}, #{userpw}, #{email}, #{gender})
+	</insert>
+	
+	<select id="read" resultType="com.spring.domain.MemberVO">
+		SELECT userid, userpw, username, email, gender
+		FROM tam_member
+		WHERE userid = #{userid}
+	</select>
+	
+	<delete id="deleteMember">
+		DELETE FROM tam_member WHERE userid = #{userid}
+	</delete>
+	
+	<update id="updateMember">
+		UPDATE tam_member SET username = #{username}, userpw = #{userpw}, email = #{email}, gender = #{gender} 
+		WHERE userid = #{userid}
+	</update>
+
+</mapper>
